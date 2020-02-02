@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.452
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "design", "design\", "{C542C40A-784D-4E26-81ED-DE91B8472C79}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63919"
+		Debug.AspNetCompiler.PhysicalPath = "design\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63919\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63919"
+		Release.AspNetCompiler.PhysicalPath = "design\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63919\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63919"
+		SlnRelativePath = "design\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "masterpage", "masterpage\", "{5E3B9247-B468-4A28-B438-60CF044B51EA}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63924"
+		Debug.AspNetCompiler.PhysicalPath = "masterpage\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63924\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63924"
+		Release.AspNetCompiler.PhysicalPath = "masterpage\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63924\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63924"
+		SlnRelativePath = "masterpage\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "style library", "style library\", "{C3BB27FC-26FB-4DA8-A687-271A605C78AE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63929"
+		Debug.AspNetCompiler.PhysicalPath = "style library\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63929\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63929"
+		Release.AspNetCompiler.PhysicalPath = "style library\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63929\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63929"
+		SlnRelativePath = "style library\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C542C40A-784D-4E26-81ED-DE91B8472C79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C542C40A-784D-4E26-81ED-DE91B8472C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E3B9247-B468-4A28-B438-60CF044B51EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E3B9247-B468-4A28-B438-60CF044B51EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3BB27FC-26FB-4DA8-A687-271A605C78AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3BB27FC-26FB-4DA8-A687-271A605C78AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C78AD0C5-1831-4623-89D1-04B781455598}
+	EndGlobalSection
+EndGlobal
