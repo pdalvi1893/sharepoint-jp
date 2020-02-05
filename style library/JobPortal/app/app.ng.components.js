@@ -3,12 +3,12 @@
 
     jpApp.component('jpTopNav', {
         controllerAs: 'vm',
-        controller: function () {
-            debugger;
-            console.log("test app");
+        controller: function (svc) {
             var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.tempUrl = svc.getTemplateUrl('top-nav.html');
         },
-        templateUrl: '/sites/testclassic/style library/jobportal/app/templates/topNav.html',
+        template:"<div ng-include='vm.tempUrl'></div>",
         bindings: {
             title: '@'
         }
@@ -16,10 +16,12 @@
 
     jpApp.component('jpHeader', {
         controllerAs: 'vm',
-        controller: function () {
+        controller: function (svc) {
             var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.tempUrl = svc.getTemplateUrl('glb-header.html');
         },
-        templateUrl: '/sites/testclassic/style library/jobportal/app/templates/glb-header.html',
+        template: "<div ng-include='vm.tempUrl'></div>",
         bindings: {
             title: '@'
         }
@@ -27,10 +29,25 @@
 
     jpApp.component('jpFooter', {
         controllerAs: 'vm',
-        controller: function () {
+        controller: function (svc) {
             var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.tempUrl = svc.getTemplateUrl('glb-footer.html');
         },
-        templateUrl: '/sites/testclassic/style library/jobportal/app/templates/glb-footer.html',
+        template: "<div ng-include='vm.tempUrl'></div>",
+        bindings: {
+            title: '@'
+        }
+    });
+
+    jpApp.component('jpBlogLatest', {
+        controllerAs: 'vm',
+        controller: function (svc) {
+            var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl();
+            ctrl.tempUrl = svc.getTemplateUrl('blog-latest.html');
+        },
+        template: "<div ng-include='vm.tempUrl'></div>",
         bindings: {
             title: '@'
         }

@@ -1,9 +1,17 @@
 ﻿(function () {
     'use strict';
 
-    console.log("test site service")
     jpApp.factory('svc', ['$http', '$q', function ($http, $q) {
-        console.log("test site inside service");
-        debugger;
+        var _siteUrl = _spPageContextInfo.siteServerRelativeUrl;
+
+        return {
+            getSiteUrl: function () {
+                return _siteUrl;
+            },
+            getTemplateUrl: function (templateName) {
+                return _siteUrl + '/style library/jobportal/app/templates/' + templateName;
+            }
+        };
     }]);
+
 })();

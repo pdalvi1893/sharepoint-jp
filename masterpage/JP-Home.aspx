@@ -18,11 +18,11 @@
 <asp:Content ContentPlaceHolderId="PlaceHolderTitleBreadcrumb" runat="server"> <%--<SharePointWebControls:ListSiteMapPath runat="server" SiteMapProviders="CurrentNavigationSwitchableProvider" RenderCurrentNodeAsLink="false" PathSeparator="" CssClass="s4-breadcrumb" NodeStyle-CssClass="s4-breadcrumbNode" CurrentNodeStyle-CssClass="s4-breadcrumbCurrentNode" RootNodeStyle-CssClass="s4-breadcrumbRootNode" NodeImageOffsetX=0 NodeImageOffsetY=289 NodeImageWidth=16 NodeImageHeight=16 NodeImageUrl="/_layouts/15/images/fgimg.png?rev=40" HideInteriorRootNodes="true" SkipLinkText="" />--%> </asp:Content>
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
 
-<div>
-    <h2>
+<div class="jp-main-cont">
+    <%--<h2>
         <h2>hello pankaj</h2>
         <SharePointWebControls:TextField runat="server" FieldName="Title"/>
-    </h2>
+    </h2>--%>
     <div class="content-cont">
             <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" HasInitialFocus="False" MinimumEditHeight="600px" runat="server" />
     </div>
@@ -32,6 +32,7 @@
     <div class="sp-zones-cont right">
         <WebPartPages:WebPartZone runat="server" Title="Right Column" ID="RightColumn"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
     </div>        
-</div>					
+</div>				
+    <jp-blog-latest></jp-blog-latest>
 	
 </asp:Content>
