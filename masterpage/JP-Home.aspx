@@ -19,10 +19,6 @@
 <asp:Content ContentPlaceholderID="PlaceHolderMain" runat="server">
 
 <div class="jp-main-cont">
-    <%--<h2>
-        <h2>hello pankaj</h2>
-        <SharePointWebControls:TextField runat="server" FieldName="Title"/>
-    </h2>--%>
     <div class="content-cont">
             <PublishingWebControls:RichHtmlField FieldName="PublishingPageContent" HasInitialFocus="False" MinimumEditHeight="600px" runat="server" />
     </div>
@@ -33,6 +29,4 @@
         <WebPartPages:WebPartZone runat="server" Title="Right Column" ID="RightColumn"><ZoneTemplate></ZoneTemplate></WebPartPages:WebPartZone>
     </div>        
 </div>				
-    <jp-blog-latest></jp-blog-latest>
-	
 </asp:Content>
