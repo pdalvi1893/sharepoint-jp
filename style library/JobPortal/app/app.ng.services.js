@@ -13,6 +13,26 @@
             });
         };
 
+        function _getJPImageUrl(endPoint) {
+
+            return $http.get(endPoint, _getConfig).then(function (d) {
+                var imgTag = d.data.d.faaImage;
+                debugger;
+                //console.log(imgTag);
+                var src = '';
+                if (imgTag) {
+                    //var regex = /<img.*?src="(.?)"/;
+                    //src = (regex.exec(imgTag) !== null) ? regex.exec(imgTag)[1] : "";
+                    //src = (src.indexOf("?") > 0) ? src.substring(0, src.indexOf("?")) : src;
+
+                    src = $(imgTag).attr("src");
+                }
+
+                //console.log(src);
+                return src;
+            });
+        }
+
         return {
             getSiteUrl: function () {
                 return _siteUrl;
@@ -25,7 +45,7 @@
             },
             getJobCategories: function (maxCount) {
                 if (!maxCount) {
-                    maxCount = 4; 
+                    maxCount = 4;
                 }
 
                 var url = _siteUrl + "/_api/web/lists/getbytitle('JobCategories')/items?$top=" + maxCount;
@@ -33,6 +53,25 @@
                 return _getSPItems(url).then(function (d) {
                     return d;
                 })
+            },
+            getBlogPosts: function (maxCount) {
+
+                if (!maxCount) {
+                    maxCount = 8;
+                }
+
+                var url = _siteUrl + "/_api/web/lists/getbytitle('BlogPosts')/items";
+
+                return _getSPItems(url).then(function (d) {
+                    var col = d;
+                    col.forEach(function (item) {
+                        _getJPImageUrl(item.FieldValuesAsHtml.__deferred.uri).then(function (u) {
+                            item.imageUrl = u;
+                        });
+                    })
+
+                    return col;
+                });
             }
         };
     }]);

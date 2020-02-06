@@ -5,10 +5,10 @@
         controllerAs: 'vm',
         controller: function (svc) {
             var ctrl = this;
-            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.siteUrl = svc.getSiteUrl();
             ctrl.tempUrl = svc.getTemplateUrl('top-nav.html');
         },
-        template:"<div ng-include='vm.tempUrl'></div>",
+        template: "<div ng-include='vm.tempUrl'></div>",
         bindings: {
             title: '@'
         }
@@ -18,7 +18,7 @@
         controllerAs: 'vm',
         controller: function (svc) {
             var ctrl = this;
-            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.siteUrl = svc.getSiteUrl();
             ctrl.tempUrl = svc.getTemplateUrl('glb-header.html');
         },
         template: "<div ng-include='vm.tempUrl'></div>",
@@ -31,7 +31,7 @@
         controllerAs: 'vm',
         controller: function (svc) {
             var ctrl = this;
-            ctrl.siteUrl = svc.getSiteUrl(); 
+            ctrl.siteUrl = svc.getSiteUrl();
             ctrl.tempUrl = svc.getTemplateUrl('glb-footer.html');
         },
         template: "<div ng-include='vm.tempUrl'></div>",
@@ -46,7 +46,12 @@
             var ctrl = this;
             ctrl.siteUrl = svc.getSiteUrl();
             ctrl.tempUrl = svc.getTemplateUrl('blog-latest.html');
-            ctrl.imageUrl = svc.getImagesDirUrl();
+            //ctrl.imageUrl = svc.getImagesDirUrl();
+            ctrl.$onInit = function () {
+                svc.getBlogPosts(8).then(function (p) {
+                    ctrl.items = p;
+                });
+            };
         },
         template: "<div ng-include='vm.tempUrl'></div>",
         bindings: {
@@ -70,7 +75,7 @@
         template: "<div ng-include='vm.tempUrl'></div>",
         bindings: {
             title: '@',
-            count:'@'
+            count: '@'
         }
     });
 

@@ -10,14 +10,14 @@
             </div>
             <!-- latest-blog end here -->
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-12" ng-repeat="item in vm.items">
                 <!-- box start here -->
                 <div class="box">
                     <a href="blog.html">
-                        <img src="{{vm.imageUrl}}blog.jpg" alt="b1" title="b1" class="img-responsive" />
+                        <img src="{{item.imageUrl}}?RenditionID=5" alt="b1" title="b1" class="img-responsive" />
                     </a>
                     <div class="matter">
-                        <h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
+                        <h1>{{item.Title}}</h1>
                         <p>Aestibulum nec mauris sapien. Vestibulum ultricies quam sit amet pretium rutrum. Etiam tempus lacus in sem imperdiet ...</p>
                         <a href="blog.html">Read more	<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
                     </div>
@@ -25,56 +25,6 @@
                 <!-- box end here -->
             </div>
 
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <!-- box start here -->
-                <div class="box">
-                    <a href="blog.html">
-                        <img src="{{vm.imageUrl}}blog.jpg" alt="b2" title="b2" class="img-responsive" />
-                    </a>
-                    <div class="matter">
-                        <h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
-                        <p>Aestibulum nec mauris sapien. Vestibulum ultricies quam sit amet pretium rutrum. Etiam tempus lacus in sem imperdiet ...</p>
-                        <a href="blog.html">Read more	<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <!-- box end here -->
-            </div>
-
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <!-- box start here -->
-                <div class="box">
-                    <a href="blog.html">
-                        <img src="{{vm.imageUrl}}blog.jpg" alt="b3" title="b3" class="img-responsive" />
-                    </a>
-                    <div class="matter">
-                        <h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
-                        <p>Aestibulum nec mauris sapien. Vestibulum ultricies quam sit amet pretium rutrum. Etiam tempus lacus in sem imperdiet ...</p>
-                        <a href="blog.html">Read more	<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <!-- box end here -->
-            </div>
-
-
-
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <!-- box start here -->
-                <div class="box">
-                    <a href="blog.html">
-                        <img src="{{vm.imageUrl}}blog.jpg" alt="b4" title="b4" class="img-responsive" />
-                    </a>
-                    <div class="matter">
-                        <h1>Tonsectetur adipiscing elit. Viva mus id interdum nibh, eu</h1>
-                        <p>Aestibulum nec mauris sapien. Vestibulum ultricies quam sit amet pretium rutrum. Etiam tempus lacus in sem imperdiet ...</p>
-                        <a href="blog.html">Read more	<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <!-- box end here -->
-            </div>
         </div>
     </div>
 </div>
