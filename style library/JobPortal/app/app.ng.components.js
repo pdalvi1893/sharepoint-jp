@@ -128,4 +128,24 @@
         }
     });
 
+    jpApp.component('jpJobsResult', {
+        controllerAs: 'vm',
+        controller: function (svc) {
+            var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl();
+            ctrl.tempUrl = svc.getTemplateUrl('jobs-result.html');
+            ctrl.$onInit = function () {
+                svc.getJobResults("test 1",ctrl.count).then(function (d) {
+                    ctrl.items = d;
+                });
+            };
+
+        },
+        template: "<div ng-include='vm.tempUrl'></div>",
+        bindings: {
+            title: '@',
+            count: '@'
+        }
+    });
+
 })();

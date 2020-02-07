@@ -13,6 +13,25 @@
             });
         };
 
+        function _getSPRelevantResults(endpoint) {
+            return $http.get(endpoint, _getConfig).then(function (d) {
+
+                var results = d.data.d.query.PrimaryQueryResult.RelevantResults.Table.Rows.results;
+                var col = [];
+
+                results.forEach(function (rItem) {
+                    var item = {};
+                    rItem.Cells.results.forEach(function (cell) {
+                        item[cell.Key] = cell.Value;
+                    });
+
+                    col.push(item);
+                });
+
+                return col;
+            });
+        };
+
         function _getJPImageUrl(endPoint) {
 
             return $http.get(endPoint, _getConfig).then(function (d) {
@@ -101,6 +120,19 @@
                             item.imageUrl = u;
                         });
                     })
+
+                    return col;
+                });
+            },
+            getJobResults: function (keyword, count) {
+
+                if (!count)
+                    count = 4;
+
+                var url = _siteUrl + "/_api/search/query?querytext='" + keyword + "'";
+
+                return _getSPRelevantResults(url).then(function (d) {
+                    var col = d;
 
                     return col;
                 });
