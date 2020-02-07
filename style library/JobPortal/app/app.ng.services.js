@@ -17,7 +17,6 @@
 
             return $http.get(endPoint, _getConfig).then(function (d) {
                 var imgTag = d.data.d.faaImage;
-                debugger;
                 //console.log(imgTag);
                 var src = '';
                 if (imgTag) {
@@ -61,6 +60,21 @@
                 }
 
                 var url = _siteUrl + "/_api/web/lists/getbytitle('BlogPosts')/items";
+
+                return _getSPItems(url).then(function (d) {
+                    var col = d;
+                    col.forEach(function (item) {
+                        _getJPImageUrl(item.FieldValuesAsHtml.__deferred.uri).then(function (u) {
+                            item.imageUrl = u;
+                        });
+                    })
+
+                    return col;
+                });
+            },
+            getSliders: function () {
+
+                var url = _siteUrl + "/_api/web/lists/getbytitle('jpSlider')/items";
 
                 return _getSPItems(url).then(function (d) {
                     var col = d;

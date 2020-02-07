@@ -46,7 +46,7 @@
             var ctrl = this;
             ctrl.siteUrl = svc.getSiteUrl();
             ctrl.tempUrl = svc.getTemplateUrl('blog-latest.html');
-            //ctrl.imageUrl = svc.getImagesDirUrl();
+            ctrl.imageUrl = svc.getImagesDirUrl();
             ctrl.$onInit = function () {
                 svc.getBlogPosts(8).then(function (p) {
                     ctrl.items = p;
@@ -58,6 +58,35 @@
             title: '@'
         }
     });
+
+    jpApp.component('jpSlider', {
+        controllerAs: 'vm',
+        controller: function (svc) {
+            var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl();
+            ctrl.tempUrl = svc.getTemplateUrl('slideshow.html');
+            ctrl.imageUrl = svc.getImagesDirUrl();
+            ctrl.$onInit = function () {
+                svc.getSliders().then(function (s) {
+                    ctrl.items = s;
+                    setTimeout(function () { activateSlider(); }, 700);
+                });
+            };
+
+            function activateSlider() {
+                $('.slideshow').owlCarousel({
+                    items: 6,
+                    autoPlay: 5000,
+                    singleItem: true,
+                    navigation: true,
+                    navigationText: false,
+                    pagination: true,
+                });
+            }
+        },
+        template: "<div ng-include='vm.tempUrl'></div>"
+    });
+
 
     jpApp.component('jpJobCategories', {
         controllerAs: 'vm',
