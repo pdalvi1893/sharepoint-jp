@@ -3,18 +3,18 @@
         <div class="row">
             <!-- featured-jobs start here -->
             <div class="featured-jobs">
-                <h1>FEATURED JOBS</h1>
+                <h1>{{vm.title}}</h1>
                 <div class="border"></div>
                 <div class="border1"></div>
             </div>
             <!-- featured-jobs end here -->
 
 
-            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-12" ng-repeat="item in vm.items">
                 <div class="product-box">
                     <div class="image">
                         <a href="jobs.html">
-                            <img class="img-responsive" src="images/jobs.jpg" alt="p1" title="p1" />
+                            <img class="img-responsive" src="{{item.imageUrl}}" alt="p1" title="p1" />
                         </a>
                         <div class="buttons">
                             <div class="open-down">
@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="matter">
-                        <h1>IT Department Manager</h1>
+                        <h1>{{item.Title}}</h1>
                         <ul class="list-inline">
                             <li>
                                 <a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Full Time</a>
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-3 col-xs-12">
+            <!--<div class="col-md-3 col-sm-3 col-xs-12">
                 <div class="product-box">
                     <div class="image">
                         <a href="jobs.html">
@@ -144,7 +144,7 @@
                     <button type="button" class="btn btn-info" onclick="location.href='jobs.html'">VIEW MORE</button>
                     <button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>

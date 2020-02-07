@@ -108,4 +108,24 @@
         }
     });
 
+    jpApp.component('jpJobsFeatured', {
+        controllerAs: 'vm',
+        controller: function (svc) {
+            var ctrl = this;
+            ctrl.siteUrl = svc.getSiteUrl();
+            ctrl.tempUrl = svc.getTemplateUrl('jobs-featured.html');
+            ctrl.$onInit = function () {
+                svc.getFeaturedJobs(ctrl.count).then(function (d) {
+                    ctrl.items = d;
+                });
+            };
+
+        },
+        template: "<div ng-include='vm.tempUrl'></div>",
+        bindings: {
+            title: '@',
+            count: '@'
+        }
+    });
+
 })();

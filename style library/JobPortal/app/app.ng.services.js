@@ -86,6 +86,24 @@
 
                     return col;
                 });
+            },
+            getFeaturedJobs: function (count) {
+
+                if (!count)
+                    count = 4;
+
+                var url = _siteUrl + "/_api/web/lists/getbytitle('JobPostings')/items?$top=" + count;
+
+                return _getSPItems(url).then(function (d) {
+                    var col = d;
+                    col.forEach(function (item) {
+                        _getJPImageUrl(item.FieldValuesAsHtml.__deferred.uri).then(function (u) {
+                            item.imageUrl = u;
+                        });
+                    })
+
+                    return col;
+                });
             }
         };
     }]);
